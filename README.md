@@ -1,6 +1,34 @@
-# TAC Server
+# TACLink Server
 
-A gRPC server for handling tactical observations and authentication.
+TACLink is an open-source tactical coordination platform that provides real-time situational awareness, secure communication, and cross-organizational coordination capabilities. It serves as a modern alternative to traditional TAK (Tactical Assault Kit) systems, built with Go for improved performance, security, and scalability.
+
+## Core Capabilities
+
+1. **Real-time Situational Awareness**
+   - Geospatial mapping and tracking
+   - Team position sharing
+   - Place/location management
+   - Dynamic tactical overlays
+
+2. **Secure Communication**
+   - End-to-end encrypted messaging
+   - Multi-tenant architecture
+   - Role-based access control
+   - Device-level authentication
+
+3. **Federation Capabilities**
+   - Cross-organization coordination
+   - Controlled information sharing
+   - Distributed team management
+   - Interoperability with existing TAK systems
+
+4. **Modern Architecture**
+   - Built in Go for performance and reliability
+   - Protocol Buffers for efficient data exchange
+   - gRPC for scalable communication
+   - Designed for cloud-native deployment
+
+**TAC** stands for **Tactical Adaptive Coordination**, reflecting the system's focus on dynamic adaptability and collaborative functionality within a multi-tenant federated architecture.
 
 ## Prerequisites
 
