@@ -1,8 +1,6 @@
 syntax = "proto3";
-package taclink;
 
 import "google/protobuf/timestamp.proto";
-import "core.proto";
 
 message Place {
     string id = 1;
