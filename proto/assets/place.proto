@@ -1,0 +1,45 @@
+syntax = "proto3";
+package taclink;
+
+import "google/protobuf/timestamp.proto";
+import "core.proto";
+
+message Place {
+    string id = 1;
+    string name = 2;
+    PlaceType type = 3;
+    GeoPoint location = 4;  // Central/primary point
+    optional GeoBoundary boundary = 5;  // Optional area definition
+    
+    string description = 6;
+    repeated string tags = 7;
+    bytes owner_pubkey = 8;
+    string server_id = 9;  // For federation
+    
+    AccessLevel access_level = 10;
+    repeated string authorized_team_ids = 11;
+    repeated string authorized_user_ids = 12;
+    
+    google.protobuf.Timestamp created_at = 13;
+    google.protobuf.Timestamp updated_at = 14;
+    map<string, string> metadata = 15;  // Extensible properties
+    
+    enum PlaceType {
+        UNKNOWN = 0;
+        BASE = 1;
+        CHECKPOINT = 2;
+        OBSERVATION_POST = 3;
+        LANDING_ZONE = 4;
+        ASSEMBLY_AREA = 5;
+        SUPPLY_POINT = 6;
+        MEDICAL = 7;
+        COMMAND_POST = 8;
+        CUSTOM = 9;
+    }
+    
+    enum AccessLevel {
+        PUBLIC = 0;      // Visible to all users
+        PROTECTED = 1;   // Visible to authorized teams/users
+        PRIVATE = 2;     // Visible only to owner
+    }
+}

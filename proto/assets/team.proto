@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Team {
+    string id = 1;
+    string name = 2;
+    repeated string member_ids = 3;
+    repeated Role team_roles = 4;
+    string server_id = 5;  // For federation tracking
+    FederationPolicy federation_policy = 6;
+}
+
+message FederationPolicy {
+    bool allow_federation = 1;
+    repeated string allowed_server_ids = 2;
+    repeated Role.Permission allowed_permissions = 3;
+}
